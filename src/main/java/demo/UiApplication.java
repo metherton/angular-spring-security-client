@@ -22,7 +22,7 @@ import java.util.UUID;
 @RestController
 public class UiApplication {
 
-    @RequestMapping("/resource")
+//    @RequestMapping("/resource")
     public Map<String,Object> home() {
         Map<String,Object> model = new HashMap<String,Object>();
         model.put("id", UUID.randomUUID().toString());
