@@ -10,16 +10,21 @@ import org.springframework.security.config.annotation.web.configuration.WebSecur
 import org.springframework.security.web.csrf.CsrfFilter;
 import org.springframework.security.web.csrf.CsrfTokenRepository;
 import org.springframework.security.web.csrf.HttpSessionCsrfTokenRepository;
+import org.springframework.session.data.redis.config.annotation.web.http.EnableRedisHttpSession;
 import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.ResponseBody;
 import org.springframework.web.bind.annotation.RestController;
 
+import javax.servlet.http.HttpSession;
 import java.security.Principal;
+import java.util.Collections;
 import java.util.HashMap;
 import java.util.Map;
 import java.util.UUID;
 
 @SpringBootApplication
 @RestController
+@EnableRedisHttpSession
 public class UiApplication {
 
 //    @RequestMapping("/resource")
@@ -61,5 +66,12 @@ public class UiApplication {
         }
 
     }
+
+    @RequestMapping("/token")
+    @ResponseBody
+    public Map<String,String> token(HttpSession session) {
+        return Collections.singletonMap("token", session.getId());
+    }
+
 
 }
