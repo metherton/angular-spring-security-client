@@ -28,12 +28,12 @@ import java.util.UUID;
 public class UiApplication {
 
 //    @RequestMapping("/resource")
-    public Map<String,Object> home() {
-        Map<String,Object> model = new HashMap<String,Object>();
-        model.put("id", UUID.randomUUID().toString());
-        model.put("content", "Hello World");
-        return model;
-    }
+//    public Map<String,Object> home() {
+//        Map<String,Object> model = new HashMap<String,Object>();
+//        model.put("id", UUID.randomUUID().toString());
+//        model.put("content", "Hello World");
+//        return model;
+//    }
 
     public static void main(String[] args) {
         SpringApplication.run(UiApplication.class, args);
@@ -54,7 +54,7 @@ public class UiApplication {
                     .httpBasic()
                     .and()
                     .authorizeRequests()
-                    .antMatchers("/index.html", "/home.html", "/login.html", "/").permitAll()
+                    .antMatchers("/index.html", "/home.html", "/login.html", "/", "/*.js", "/**/app-login*").permitAll()
                     .anyRequest().authenticated().and()
                     .addFilterAfter(new CsrfHeaderFilter(), CsrfFilter.class).csrf().csrfTokenRepository(csrfTokenRepository());;
         }

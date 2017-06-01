@@ -7,6 +7,9 @@ angular.module('hello', [ 'ngRoute' ])
       }).when('/login', {
         templateUrl : 'login.html',
         controller : 'navigation'
+      }).when('/route', {
+        templateUrl : 'route.html',
+        controller : 'route'
       }).otherwise('/');
 
       $httpProvider.defaults.headers.common["X-Requested-With"] = 'XMLHttpRequest';
@@ -25,6 +28,20 @@ angular.module('hello', [ 'ngRoute' ])
         });
       });
     })
+    .controller('route', function($scope, $http) {
+      $http.get('route').success(function(route) {
+        $http({
+          url : 'http://localhost:9000/route',
+          method : 'GET',
+          headers : {
+            'X-Auth-Token' : token.token
+          }
+        }).success(function(data) {
+          $scope.route = data;
+        });
+      });
+    })    
+    
     .controller('navigation',  function($rootScope, $scope, $http, $location) {
 
       var authenticate = function(credentials, callback) {
@@ -70,4 +87,13 @@ angular.module('hello', [ 'ngRoute' ])
         });
       }
 
+      $scope.route = function() {
+        $http.get('route', {headers : headers}).success(function() {
+          $rootScope.authenticated = false;
+          $location.path("/");
+        }).error(function(data) {
+          $rootScope.authenticated = false;
+        });
+      }      
+      
     });
