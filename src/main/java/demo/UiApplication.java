@@ -54,7 +54,7 @@ public class UiApplication {
                     .httpBasic()
                     .and()
                     .authorizeRequests()
-                    .antMatchers("/index.html", "/home.html", "/login.html", "/", "/*.js*", "/**/app-login*").permitAll()
+                    .antMatchers("/index.html", "/home.html", "/login.html", "/", "/*.js*", "/**/app-home*", "/**/app-login*", "/**/*").permitAll()
                     .anyRequest().authenticated().and()
                     .addFilterAfter(new CsrfHeaderFilter(), CsrfFilter.class).csrf().csrfTokenRepository(csrfTokenRepository());;
         }
