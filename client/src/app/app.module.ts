@@ -9,7 +9,7 @@ import { AppLoginComponent } from './app-login/app-login.component';
 import { AppLogoutComponent } from './app-logout/app-logout.component';
 import { AppNavigationComponent } from './app-navigation/app-navigation.component';
 import {BrowserAnimationsModule} from '@angular/platform-browser/animations';
-import {MdButtonModule, MdCheckboxModule, MdToolbarModule, MdAutocompleteModule, MdInputModule, MdCardModule} from '@angular/material';
+import {MdButtonModule, MdCheckboxModule, MdToolbarModule, MdAutocompleteModule, MdInputModule, MdCardModule, MdGridListModule} from '@angular/material';
 import 'hammerjs';
 
 export class MyOptions extends BaseRequestOptions {
@@ -34,7 +34,7 @@ export class MyOptions extends BaseRequestOptions {
     HttpModule,
     AppRoutingModule,
     BrowserAnimationsModule,
-    MdButtonModule, MdCheckboxModule, MdToolbarModule, MdAutocompleteModule, MdInputModule, MdCardModule
+    MdButtonModule, MdCheckboxModule, MdToolbarModule, MdAutocompleteModule, MdInputModule, MdCardModule, MdGridListModule
   ],
 
   bootstrap: [AppComponent]
