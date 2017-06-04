@@ -1,0 +1,11 @@
+<form ngSubmit="login()" #loginForm="ngForm" class="example-form">
+  <p style="padding-left: 50px; padding-top: 20px">
+    <md-input-container class="example-full-width">
+      <input mdInput [(ngModel)]="credentials.username" placeholder="Username" >
+    </md-input-container>
+    <md-input-container class="example-full-width">
+      <input mdInput [(ngModel)]="credentials.password" placeholder="Password" >
+    </md-input-container>
+    <button style="margin-top: 20px" type="submit" md-raised-button>Login</button>
+  </p>
+</form>

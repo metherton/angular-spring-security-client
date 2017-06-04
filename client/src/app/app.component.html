@@ -1,0 +1,22 @@
+<md-toolbar color="primary">
+  <span style="padding-right: 100px">MartinEtherton.com</span>
+  <!-- This fills the remaining space of the current row -->
+  <span class="example-fill-remaining-space">
+    <div class="button-row">
+      <span style="padding-right: 20px"><button md-button routerLink="app-login">Login</button></span>
+      <button md-button routerLink="app-home">Home</button>
+    </div>
+  </span>
+
+  <span>
+    <md-input-container>
+      <input mdInput placeholder="Search" [mdAutocomplete]="auto">
+    </md-input-container>
+    <md-autocomplete #auto="mdAutocomplete">
+      <md-option *ngFor="let state of filteredStates | async" [value]="Search">
+        {{ state }}
+      </md-option>
+    </md-autocomplete>
+  </span>
+</md-toolbar>
+<router-outlet></router-outlet>
