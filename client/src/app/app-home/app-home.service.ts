@@ -1,6 +1,7 @@
 import { Injectable } from '@angular/core';
 import {Http, Response, RequestOptions, Headers} from '@angular/http'
 import 'rxjs/add/operator/toPromise';
+import {environment} from '../../environments/environment';
 
 @Injectable()
 export class AppHomeService {
@@ -11,7 +12,7 @@ export class AppHomeService {
     let myHeaders = new Headers();
     myHeaders.append('X-Requested-With', 'XMLHttpRequest');
     let options = new RequestOptions({headers: myHeaders});
-    return this.http.get(`token`, options).toPromise().then(response => response.json());
+    return this.http.get(environment.apiUrl + `token`, options).toPromise().then(response => response.json());
   }
 
   getGreeting(token: any): Promise<any> {
@@ -20,8 +21,8 @@ export class AppHomeService {
     myHeaders.append('X-Requested-With', 'XMLHttpRequest');
     let options = new RequestOptions({headers: myHeaders});
    // return this.http.get(`http://localhost:9000`, options).toPromise().then(response => response.json());
-    return this.http.get(`http://localhost:9000`, options).toPromise().then(response => response.json());
-  } 
+    return this.http.get(environment.resourceUrl, options).toPromise().then(response => response.json());
+  }
 
 //   let myHeaders = new Headers();
 //   myHeaders.append('Content-Type', 'application/json');
