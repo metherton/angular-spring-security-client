@@ -1,13 +1,14 @@
 webpackJsonp([1,4],{
 
-/***/ 106:
+/***/ 107:
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__(2);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__angular_http__ = __webpack_require__(20);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2_rxjs_add_operator_toPromise__ = __webpack_require__(80);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2_rxjs_add_operator_toPromise__ = __webpack_require__(81);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_2_rxjs_add_operator_toPromise___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_2_rxjs_add_operator_toPromise__);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__environments_environment__ = __webpack_require__(39);
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return AppHomeService; });
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
@@ -21,6 +22,7 @@ var __metadata = (this && this.__metadata) || function (k, v) {
 
 
 
+
 var AppHomeService = (function () {
     function AppHomeService(http) {
         this.http = http;
@@ -29,7 +31,7 @@ var AppHomeService = (function () {
         var myHeaders = new __WEBPACK_IMPORTED_MODULE_1__angular_http__["a" /* Headers */]();
         myHeaders.append('X-Requested-With', 'XMLHttpRequest');
         var options = new __WEBPACK_IMPORTED_MODULE_1__angular_http__["e" /* RequestOptions */]({ headers: myHeaders });
-        return this.http.get("token", options).toPromise().then(function (response) { return response.json(); });
+        return this.http.get(__WEBPACK_IMPORTED_MODULE_3__environments_environment__["a" /* environment */].apiUrl + "token", options).toPromise().then(function (response) { return response.json(); });
     };
     AppHomeService.prototype.getGreeting = function (token) {
         var myHeaders = new __WEBPACK_IMPORTED_MODULE_1__angular_http__["a" /* Headers */]();
@@ -37,7 +39,7 @@ var AppHomeService = (function () {
         myHeaders.append('X-Requested-With', 'XMLHttpRequest');
         var options = new __WEBPACK_IMPORTED_MODULE_1__angular_http__["e" /* RequestOptions */]({ headers: myHeaders });
         // return this.http.get(`http://localhost:9000`, options).toPromise().then(response => response.json());
-        return this.http.get("http://localhost:9000", options).toPromise().then(function (response) { return response.json(); });
+        return this.http.get(__WEBPACK_IMPORTED_MODULE_3__environments_environment__["a" /* environment */].resourceUrl, options).toPromise().then(function (response) { return response.json(); });
     };
     return AppHomeService;
 }());
@@ -51,14 +53,15 @@ var _a;
 
 /***/ }),
 
-/***/ 107:
+/***/ 108:
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__(2);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__angular_http__ = __webpack_require__(20);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2_rxjs_add_operator_toPromise__ = __webpack_require__(80);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2_rxjs_add_operator_toPromise__ = __webpack_require__(81);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_2_rxjs_add_operator_toPromise___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_2_rxjs_add_operator_toPromise__);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__environments_environment__ = __webpack_require__(39);
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return AppLoginService; });
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
@@ -72,12 +75,13 @@ var __metadata = (this && this.__metadata) || function (k, v) {
 
 
 
+
 var AppLoginService = (function () {
     function AppLoginService(http) {
         this.http = http;
     }
     AppLoginService.prototype.getUser = function (headers) {
-        return this.http.get("user", headers).toPromise().then(function (response) { return response.json(); });
+        return this.http.get(__WEBPACK_IMPORTED_MODULE_3__environments_environment__["a" /* environment */].apiUrl + "user", headers).toPromise().then(function (response) { return response.json(); });
     };
     return AppLoginService;
 }());
@@ -91,7 +95,7 @@ var _a;
 
 /***/ }),
 
-/***/ 108:
+/***/ 109:
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
@@ -127,7 +131,7 @@ AppLogoutComponent = __decorate([
 
 /***/ }),
 
-/***/ 109:
+/***/ 110:
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
@@ -163,14 +167,14 @@ AppNavigationComponent = __decorate([
 
 /***/ }),
 
-/***/ 110:
+/***/ 111:
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__(2);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__angular_router__ = __webpack_require__(65);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__app_home_app_home_component__ = __webpack_require__(66);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__app_login_app_login_component__ = __webpack_require__(67);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__angular_router__ = __webpack_require__(38);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__app_home_app_home_component__ = __webpack_require__(67);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__app_login_app_login_component__ = __webpack_require__(68);
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return AppRoutingModule; });
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
@@ -206,7 +210,7 @@ AppRoutingModule = __decorate([
 
 /***/ }),
 
-/***/ 111:
+/***/ 112:
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
@@ -239,22 +243,22 @@ AppComponent = __decorate([
 
 /***/ }),
 
-/***/ 112:
+/***/ 113:
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_platform_browser__ = __webpack_require__(14);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__angular_core__ = __webpack_require__(2);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__angular_forms__ = __webpack_require__(64);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__angular_forms__ = __webpack_require__(66);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__angular_http__ = __webpack_require__(20);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__app_routing_module__ = __webpack_require__(110);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_5__app_component__ = __webpack_require__(111);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_6__app_home_app_home_component__ = __webpack_require__(66);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_7__app_login_app_login_component__ = __webpack_require__(67);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_8__app_logout_app_logout_component__ = __webpack_require__(108);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_9__app_navigation_app_navigation_component__ = __webpack_require__(109);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_10__angular_platform_browser_animations__ = __webpack_require__(105);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_11__angular_material__ = __webpack_require__(103);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__app_routing_module__ = __webpack_require__(111);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_5__app_component__ = __webpack_require__(112);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_6__app_home_app_home_component__ = __webpack_require__(67);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_7__app_login_app_login_component__ = __webpack_require__(68);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_8__app_logout_app_logout_component__ = __webpack_require__(109);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_9__app_navigation_app_navigation_component__ = __webpack_require__(110);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_10__angular_platform_browser_animations__ = __webpack_require__(106);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_11__angular_material__ = __webpack_require__(104);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_12_hammerjs__ = __webpack_require__(172);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_12_hammerjs___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_12_hammerjs__);
 /* unused harmony export MyOptions */
@@ -322,30 +326,13 @@ AppModule = __decorate([
             __WEBPACK_IMPORTED_MODULE_3__angular_http__["c" /* HttpModule */],
             __WEBPACK_IMPORTED_MODULE_4__app_routing_module__["a" /* AppRoutingModule */],
             __WEBPACK_IMPORTED_MODULE_10__angular_platform_browser_animations__["a" /* BrowserAnimationsModule */],
-            __WEBPACK_IMPORTED_MODULE_11__angular_material__["a" /* MdButtonModule */], __WEBPACK_IMPORTED_MODULE_11__angular_material__["b" /* MdCheckboxModule */], __WEBPACK_IMPORTED_MODULE_11__angular_material__["c" /* MdToolbarModule */], __WEBPACK_IMPORTED_MODULE_11__angular_material__["d" /* MdAutocompleteModule */], __WEBPACK_IMPORTED_MODULE_11__angular_material__["e" /* MdInputModule */], __WEBPACK_IMPORTED_MODULE_11__angular_material__["f" /* MdCardModule */]
+            __WEBPACK_IMPORTED_MODULE_11__angular_material__["a" /* MdButtonModule */], __WEBPACK_IMPORTED_MODULE_11__angular_material__["b" /* MdCheckboxModule */], __WEBPACK_IMPORTED_MODULE_11__angular_material__["c" /* MdToolbarModule */], __WEBPACK_IMPORTED_MODULE_11__angular_material__["d" /* MdAutocompleteModule */], __WEBPACK_IMPORTED_MODULE_11__angular_material__["e" /* MdInputModule */], __WEBPACK_IMPORTED_MODULE_11__angular_material__["f" /* MdCardModule */], __WEBPACK_IMPORTED_MODULE_11__angular_material__["g" /* MdGridListModule */]
         ],
         bootstrap: [__WEBPACK_IMPORTED_MODULE_5__app_component__["a" /* AppComponent */]]
     })
 ], AppModule);
 
 //# sourceMappingURL=app.module.js.map
-
-/***/ }),
-
-/***/ 113:
-/***/ (function(module, __webpack_exports__, __webpack_require__) {
-
-"use strict";
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return environment; });
-// The file contents for the current environment will overwrite these during build.
-// The build system defaults to the dev environment which uses `environment.ts`, but if you do
-// `ng build --env=prod` then `environment.prod.ts` will be used instead.
-// The list of which env maps to which file can be found in `.angular-cli.json`.
-// The file contents for the current environment will overwrite these during build.
-var environment = {
-    production: false
-};
-//# sourceMappingURL=environment.js.map
 
 /***/ }),
 
@@ -357,7 +344,7 @@ exports = module.exports = __webpack_require__(17)(false);
 
 
 // module
-exports.push([module.i, ".example-card {\n  width: 200px;\n}\n\n.example-header-image {\n  background-image: url(" + __webpack_require__(232) + ");\n  background-size: cover;\n}\n", ""]);
+exports.push([module.i, ".example-card {\n  width: 1356px;\n}\n\n.example-header-image {\n  background-image: url(" + __webpack_require__(232) + ");\n  background-size: cover;\n}\n", ""]);
 
 // exports
 
@@ -375,7 +362,7 @@ exports = module.exports = __webpack_require__(17)(false);
 
 
 // module
-exports.push([module.i, ".example-form {\n  width: 500px;\n}\n\n.example-full-width {\n  width: 100%;\n}\n", ""]);
+exports.push([module.i, ".example-form {\n  width: 100%;\n}\n\n.example-full-width {\n  width: 100%;\n}\n", ""]);
 
 // exports
 
@@ -442,7 +429,7 @@ module.exports = module.exports.toString();
 /***/ 173:
 /***/ (function(module, exports) {
 
-module.exports = "<md-card class=\"example-card\">\n  <md-card-header>\n    <div md-card-avatar class=\"example-header-image\"></div>\n    <md-card-title>Route Planner</md-card-title>\n  </md-card-header>\n  <img md-card-image src=\"assets/route.png\">\n  <md-card-content>\n    <p>\n      An application to allow you to plot a route between 2 or more ports\n    </p>\n  </md-card-content>\n  <md-card-actions>\n    <button md-button>LIKE</button>\n    <button md-button>SHARE</button>\n  </md-card-actions>\n</md-card>\n\n"
+module.exports = "\n\n"
 
 /***/ }),
 
@@ -470,31 +457,51 @@ module.exports = "<p>\n  app-navigation works!\n</p>\n"
 /***/ 177:
 /***/ (function(module, exports) {
 
-module.exports = "<md-toolbar color=\"primary\">\n  <span style=\"padding-right: 100px\">MartinEtherton.com</span>\n  <!-- This fills the remaining space of the current row -->\n  <span class=\"example-fill-remaining-space\">\n    <div class=\"button-row\">\n      <span style=\"padding-right: 20px\"><button md-button routerLink=\"app-login\">Login</button></span>\n      <button md-button routerLink=\"app-home\">Home</button>\n    </div>\n  </span>\n\n  <span>\n    <md-input-container>\n      <input mdInput placeholder=\"Search\" [mdAutocomplete]=\"auto\">\n    </md-input-container>\n    <md-autocomplete #auto=\"mdAutocomplete\">\n      <md-option *ngFor=\"let state of filteredStates | async\" [value]=\"Search\">\n        {{ state }}\n      </md-option>\n    </md-autocomplete>\n  </span>\n</md-toolbar>\n<router-outlet></router-outlet>\n"
+module.exports = "<md-toolbar color=\"primary\">\n  <span style=\"padding-right: 100px\">MartinEtherton.com</span>\n  <!-- This fills the remaining space of the current row -->\n  <span class=\"example-fill-remaining-space\">\n    <div class=\"button-row\">\n      <button md-button routerLink=\"app-login\">Login</button>\n      <button md-button routerLink=\"app-home\">Home</button>\n      <button md-button routerLink=\"app-algorithm\">Algorithms</button>\n      <button md-button routerLink=\"app-ons\">ONS</button>\n      <button md-button routerLink=\"app-routeapp\">Router</button>\n      <button md-button routerLink=\"app-blog\">Blog</button>\n\n    </div>\n  </span>\n\n  <span>\n    <md-input-container>\n      <input mdInput placeholder=\"Search\" [mdAutocomplete]=\"auto\">\n    </md-input-container>\n    <md-autocomplete #auto=\"mdAutocomplete\">\n      <md-option *ngFor=\"let state of filteredStates | async\" [value]=\"Search\">\n        {{ state }}\n      </md-option>\n    </md-autocomplete>\n  </span>\n</md-toolbar>\n<router-outlet></router-outlet>\n"
 
 /***/ }),
 
 /***/ 232:
 /***/ (function(module, exports) {
 
-module.exports = "data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAOEAAADhCAMAAAAJbSJIAAABJlBMVEX/////AAD8/Py5ucPx8fPq6u6RkaFPT21UVHHX1928vMX/4+NaWnb/3Nz19ffBwcp/f5P/JSX/8vJzc4menqzOztX/hYX/YWGGhppXZX/JO0j/VVXl5ej/t7dYWHSsS1x8XnVDaoWSVmtxYnrBP07jKDFhZHz/LCz/aGj/RUWrq7dsa4TuHiT/7Oz5EBT/kpL/0tLbLjl3d4yiT2JpX3j/u7tVaoP/SUn/rKz/dHT/ubn/oqKZU2f/MzP/PT3/1NT/xsb/fX3/mprRkZnteX3uXWLFc37ON0S7gY2Rnq7Rm6L3h4m1eofEqbLWiI+/sbl3UGpjgJawx9GPg5aoRlndZm/XU1y1a3u8eoekgZCpW2zXu8HkAABqVG8/WHWolKKCb4PlREsLV8OkAAAP6ElEQVR4nO2deWPaRhrGxwJkThkEGBxjmh4BG8KxpNR2HNvY2R5p0nZ3m22326bH9/8SOzOSQMcr6Z1XAhIvzx+JMOJlfppHc2tgbNOq9Pc2qo0DcsSzh0644VzcBiEzN4m4FUJWuXnohJs06pYImVl76ITslliiXqsafGuENKNeTkul+fEHQqho1PPx3l7/yvrkvcrF2SKhklFb5mSvv3A+uVC4OFsEVDHq6Yhph1PxGbMk/j38QAjZCIt45XxiPha0jOHLmy3iCaHbqPfW+Rf8btxraebFB0PIKtg7ShNn31rHl3dovu0TItuoNyXr7EsFtPeFkFXOEYAV+2RNoYh5bwjZbbxRZQ7OL/g/JuJ6oAgvwJMnmkakKJ0fB3U+t96MM+qZKDzZlShRR6eqgGGEz8GTv3p1QCSsgPEunHcjS8YzaVFxzccn6d2HJ+DJz44GxEyECb96lbHfjspFU5xhXXJRV+ydqOWjKiENMITw7VHDfj/cqOcS8Gr1h1vGlBC3SvjRkjDUqOeykLkaO69r4t4tpdDy3jhhiFHHMgdX5d5YFk5K3af3hpBp18ETjgGLcuD7xfwS3btQJTSySxm5TlAFWL+GELabK333JAAoLXq/fN2fu1KIRVQkrLddqs6CGsJ6DMZ7+3vZpaN3v3nf7vstupBpK02nvETX7tZB+N92FVA7ID2gX8B43xczbjUL3p7GlTcHx9KiJdFuO+ZtAHMdhC81AxCmiiyB8U78p5ktz/vclJPli2uZgwvrbj1lWmW8h5IaIYIFFlzSBAiZ6ak0xgu/RafO3Xdyh60xtkp4kc0GzgzpEtekRW+RVGTCnzMFIiHs0o/qwdqnBCLeLMR7C6Qx6YRpt0s99aEjqDNlW9QLWDtH9aRUCWmAKoRAG7Um68WpG7k1l1XJKH7A5j0kDAxP3chhxLkrB2+em87Jpbt0CTObIPQbVXYj3fdgSyIz644x4bTSCF8e9YhdYDVCv1F5vTh3vXwtThmJpsD5hchLeEAihhDu408Pej1aaapI6OtMjRfPXTl46m6On4rrEdlfDPkGOA8X7KBcJyGqEvo6UzXXq2tr3M20BzTuNO8tiiWcXj6y9ffJ5LV19NMhj10ok3KxMn5q6+b8/PzaPn4WThje6xeAprgFXYhRmRj6DV/Y4jzZ361DWRlyo3bUCc3pL48t/TEajf6wjz/vhROGDfi3+FujU9Eot3NxXHI3zxUIZ3VLnDCXH8rDoSxJD8ozQi4a7Z5UucEvk17uOa8iPgL3+hf8nbu9vedsef/x1u2CQuhSbt9TSRTyBKMaA7sfVdSYptcbzquoz0BTqDe83zQSB7IKkV2RSdhtrkLobawVe0OCUVfS9KiscwkY8BcFqSxGa3IE/NJiTZ6HvuYoN2oSRDQhYNRDTZpUaMFkh3Jc8YzkpEPImuUhtZfBVAiDU6juklN2L88n3PYtP1ZiQl6iJjCqAmGgRBXjF07JKY2qcdtOo3rDmG8BCBMZVYXQb1RRN6z6wXb7NHLKDfMlECE3Kq11I1Kk6wpn+4zKS87VOgVrgNhpl47Bpg3mO0DCBEZVI/SVqOORO9PEIL81flC7uzo5uTgMlr6Yr4AJ2UG3SkNUJPR1pi5Nz2BpxSp4DiuyPa6NLvwZifmGEEKyUVUJmeZJtRxGrUwuJyciw8ZieNGZ5hcyT8cEwpCOL9GoyoSFx0/dab53OvjOuMahANSmFxcLeXA/To2QZfIUo6oSFoazjqfSkGuGhKx+8UQ4zDzmJVLtRtSR3kFXzDeEE7Jml1D1KxIedGccwVuEHN6OTHN0eydy61ieZdpTVwK3kiIhK5brOZXkCqkRNrtt8Q0j76Da+KzVOpNudFailOxrIFZPXaZIyIpWAlSkRNjsVa2B8QowvygkGjYjcf+V7GtQ8Y7qYL4kkpA186qtGxXCTLfqHMLrUY+5K0dnY9G6sY16yGGv0yTkRp0Fpx+ipEDILbqKDa5HFXUH71qcCUSrEdsy2eg4VUJlo+IJi+W2++JBvf5be05OjovLE87TJ1Q1Kppw0G17/wAYVXOqRTk7JU7gHayUXcqVKVcVjIok1A7yuuH7222g3cmW5Yo0Knfy1DvFgfmqeEJuVB1vVByhlinrwcsWMKq5GsOoiYbAVHQ+XqdPyA7yVTQijrCRb0N/9vf6F6tqYq9vV42eKX5MijCELNNrY42KITQG+YbfopZ8vX5eN2jLLDuTM8Xede6YFKEIWTEPmAoUglAbdAP3oCOvUUW3YrSErolG+fMUW94eHWArjXhCrZGPOMVrVDG+qC0RuVF9jR9MipCEvPbClaixhEYjzKKWvL1+0Z0YHfJ78VqgnS98q94wKcISssx+qLXciiUc7OvR6wU8K/zHslNYWkxHcsDGX9hiEo4m5CUqxqgxhFq7GzsW552ZmjhdYmiGBpNuPCGv+tvxuRhNyC2KWPHhLVEv7WpiBKzOwCRbgZD3+uONGkmoNfYbmCUt3hL1+vJqOl1MjoHxREyqVQgxRo0i1Kpd5HoP7OPSmFhKhLxHF2fUCEKcRS0hH5fGhFIj5EaNLOqjCLlFFVZd4R7uw0TK7autMTmIad2EEmqzrtK1RD2FigmkSshL1Mj6LIwwq5czauvmME+hYuIoE8YYNYTQ0NXuBqGw4am1E0YbFSbU6mXKmrLYXMQEIRAKo4bmIkjILRq5bCFMZtT87zoJo4wKERrtfRIgR4zJRUwMEmGEUQFCY9gjAvLP/rYlwnCjBglzbeqiR67su8CjKBsi1LhRwcI/QMgtSgdk2fKfUfUiJgSRUBgVvBf9hNler0n7Auvj3XYuonWDCUEmDKn6fYSdWSJAnodtI+JxaUwIOiHv9QM9BS+hUd1PBCgIsxGPS2NCJCAES1QPYYcyx+qRJAzvTGFCJCGEjOomTGpR5hCGdqYwIRIRiqrf9xcXYWe2nzAHl4RhnSlMiGSEQaOuCAv5pBZlK8IQo2JCJCTkRvXm4pKwUE8BcEUIGxUTIikhN6qnRHUIC/V8opW4tlaEoFExIRIT+qp+m5BbNA1ANyHU68eESE7oNapF2BySFzd65SaEp1BjlQIhR3QNMQnC5rCsvBAHVtYzCh0wasinRiVHpml23n1nHVN3NhEBv/nk5WI+ny8qldvbN28q8xef/FqhB1ymb2SauXc/2i/kW36jwgG0ybhmqX/carWePJXH1yP4bITgZ8tPTeqNeOmk7/iUJ+9JXx7bML4p1JAEgeuKa380qCmCA36pshzaI3jo4lVRmsJrVJUEPf10SG1hwQH/9jmVEH7Q6WO7xPZMoaokKAEhPF60LkKPUeEAqROOwO1I1kbo7kzBAT54QlcbFQ7w4ROujAoHeACES6PCAd57Qri28BA6RoUDhBD+WaW2JOGHkf+Kfv4wQog8dDpTcACY8LiUpTaz4ICXJjXeHYbQqvpVEnScoNUWQkiNhyOURlVJ0DE5QSEB78gtbyShKFFVEnT2Q5Ha4THA7QD/+pG6CwXqPhSq9OEAISXNO/LI3zbKUksV4NNsHe3Sv9IlROdhmFIn1L9+2IRao/ywCbVGvnH3oAn1fHuzPWCE0iTU9G6Daa9rY1v9fl/+X+uP7wakBSZMpSwNS9XFl+7dW762Dj+jEGZ1Oddd+vaFpW+m0+kb62BRYVTEq2Xy7p3NZR49+voLPCHTDpztR+TeJvZxj0Co2yua20dS3Vf81St5KAZh+S1KG4ut25ujNMV4aW+5VQqekDWdDR8l4XL3R9W+Ra5atqYstOJAKDNoCt/WM/zYSk4mT8pF3d5+U2yfU17uyDlQIFzuAcnkmLemsAukSzkdWi7qneWmGdW1LWW228i6UksReVTfqIIrmr2E2oBoVEecMMFgvBSVkFsUzB7/ahOiUR1tj7DT3oeXiwZWDJErDalsl7qb41I0QmMGrTQR0vS2N0nJjJrFrn0PF4mwMwtdTRkgTGbULREWqvvFMO8AhEmMuh3CbD0iUyDCBEbdCmGhHrWaEiIURiUOLW6DsDCL/ARMyBo9mlG3QNgZRj82EUKoDcqkztnmCQvDmAW/IYTi+XuKUTdeHzbrcVkRSsiNSkDcdB4WhrFPFYQTGo0uoQearNEnpELYRKxoDickGTVLLYRXUiCMtyiLJiQYdaOEhV4XcWokodHIKxo1DULsdx70UKspIwnVjZoKIS4PD4Zl1ChHDCFrqD0BtTnCZg9ZY8cRampG3RhhEb2naRyholE3RVjs4SzKMITcqPgKakOETYV9vhGEmkLVvxnCYrmOX7aIIBRGxebiRggzSltEogh51Y9E3AThgdrGyZpeRQzdag3kjb0BwozinsKcELOPjTbA3YvrJ8yUFZ8qQBIypg8xRl07ofoPQqAJDZRR102Y6eK3MbOFJsTVi2tueQ9I+5fid+hDGDUNwvA7PtNVqAcdqRAaeqxR10loDPLobehcUiFEGHWNhLzGUknq6nNKhKwRM7e+RsJBl7a3viKhoXcjjbo2wqyO3kbQJ0VCUZxF5eK6CDWdZlFGINQijbomQt4PV64Hl59VJYyu+tdDmNMR+7KFSZ0w0qhrITTaecTeemGiEGqN0JHmdRAaOmp/xDBRCIVRQwruNRDm2nE7skWLRCgm3+B7MX1Co92N2XwzRjRC0UYFjZo6Ib0edEQlNBrgT76lTdiBV3KpiEooSlTAqFn0mFWo3IS5alfxB0aCohNyowYR0yXkhQy9HnSUgNDQg0ZNlbBTDWzFQlACQjHI6M/FNAid9kSuGvmDhVglIgwaNUXCpPWgI02fJWgvZP1GTYVQXrXOzLsJC1nJCANGTY2wU0/Foiw5oaZ7xi+zCvNUIZKEKdSDjpISihLVFSAlwkJdbQNcnzTTkSYJO84xUYOjVS4aR0l3C2O5o0LnC/KPjkuVWqe27iaTyU+PLsVha06Mpt1OX7w5ObngWkynixcv5eFULcjFxNL9nId49v3Pz/6zWCwUY7gE/9jrBTHaqFWr2XuTj/t95/C1WhDwmc+9bI5oLJjw7e+0sssEU/fvgVILHHx0avyx+hC+JeXf5Y5UCdyY7bMjpRYzSFj7ePh+EILRHhQh+IOjO0KfdoSK2hGq6f+AEIyWCuE/qXMVIYQzWlOwBG4anAbhjUHdoAa+6idZWoca3mUjFUJSeoTgPDwhRnsfCUPykBhtfYT9f2VoKn4HEn5fpIX7Afw5hHTK0l6vHKZ8lP4BEr49Kue7oEK/RerdUyhaSrUFcRgQdqmoLbKQcoVINddWlr439eHDr/F3hBilTTh+AugZkRC+Xo/UCOFxGjKhVvrx06CGPeI4ze03nwT1uKdEOP32MaAelZAZ7eUeKyuVyaPoejAYl9rMZgZIERd5q+RmERJ1LLcxrAc1VCPsgG2TYhpzTykom4OUbHnBTjvttNNOO+2000477bTTTjvttNNOO+200wPX/wDu28FFOhmuCgAAAABJRU5ErkJggg=="
+module.exports = "data:image/png;base64,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"
 
 /***/ }),
 
 /***/ 234:
 /***/ (function(module, exports, __webpack_require__) {
 
-module.exports = __webpack_require__(98);
+module.exports = __webpack_require__(99);
 
 
 /***/ }),
 
-/***/ 66:
+/***/ 39:
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return environment; });
+// The file contents for the current environment will overwrite these during build.
+// The build system defaults to the dev environment which uses `environment.ts`, but if you do
+// `ng build --env=prod` then `environment.prod.ts` will be used instead.
+// The list of which env maps to which file can be found in `.angular-cli.json`.
+// The file contents for the current environment will overwrite these during build.
+var environment = {
+    production: false,
+    apiUrl: 'http://localhost:9001/',
+    resourceUrl: 'http://localhost:9000/'
+};
+//# sourceMappingURL=environment.js.map
+
+/***/ }),
+
+/***/ 67:
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__(2);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__app_home_service__ = __webpack_require__(106);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__app_home_service__ = __webpack_require__(107);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__angular_router__ = __webpack_require__(38);
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return AppHomeComponent; });
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
@@ -507,13 +514,15 @@ var __metadata = (this && this.__metadata) || function (k, v) {
 };
 
 
+
 var AppHomeComponent = (function () {
-    function AppHomeComponent(appHomeService) {
+    function AppHomeComponent(appHomeService, router) {
         this.appHomeService = appHomeService;
+        this.router = router;
     }
     AppHomeComponent.prototype.ngOnInit = function () {
-        var _this = this;
-        this.greeting = this.appHomeService.getToken().then(function (token) { return _this.appHomeService.getGreeting(token); }).then(function (gr) { return _this.greeting = gr; });
+        this.appHomeService.getToken();
+        //   this.greeting = this.appHomeService.getToken().then(token => this.appHomeService.getGreeting(token)).then( gr => this.greeting = gr, () =>  this.router.navigate(['/app-login']));
     };
     return AppHomeComponent;
 }());
@@ -524,23 +533,23 @@ AppHomeComponent = __decorate([
         template: __webpack_require__(173),
         styles: [__webpack_require__(167)]
     }),
-    __metadata("design:paramtypes", [typeof (_a = typeof __WEBPACK_IMPORTED_MODULE_1__app_home_service__["a" /* AppHomeService */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_1__app_home_service__["a" /* AppHomeService */]) === "function" && _a || Object])
+    __metadata("design:paramtypes", [typeof (_a = typeof __WEBPACK_IMPORTED_MODULE_1__app_home_service__["a" /* AppHomeService */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_1__app_home_service__["a" /* AppHomeService */]) === "function" && _a || Object, typeof (_b = typeof __WEBPACK_IMPORTED_MODULE_2__angular_router__["b" /* Router */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_2__angular_router__["b" /* Router */]) === "function" && _b || Object])
 ], AppHomeComponent);
 
-var _a;
+var _a, _b;
 //# sourceMappingURL=app-home.component.js.map
 
 /***/ }),
 
-/***/ 67:
+/***/ 68:
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__(2);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__angular_common__ = __webpack_require__(19);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__app_login_service__ = __webpack_require__(107);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__app_login_service__ = __webpack_require__(108);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__angular_http__ = __webpack_require__(20);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__angular_router__ = __webpack_require__(65);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__angular_router__ = __webpack_require__(38);
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return AppLoginComponent; });
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
@@ -615,7 +624,7 @@ var _a, _b;
 
 /***/ }),
 
-/***/ 97:
+/***/ 98:
 /***/ (function(module, exports) {
 
 function webpackEmptyContext(req) {
@@ -624,20 +633,20 @@ function webpackEmptyContext(req) {
 webpackEmptyContext.keys = function() { return []; };
 webpackEmptyContext.resolve = webpackEmptyContext;
 module.exports = webpackEmptyContext;
-webpackEmptyContext.id = 97;
+webpackEmptyContext.id = 98;
 
 
 /***/ }),
 
-/***/ 98:
+/***/ 99:
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
 Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__(2);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__angular_platform_browser_dynamic__ = __webpack_require__(104);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__app_app_module__ = __webpack_require__(112);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__environments_environment__ = __webpack_require__(113);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__angular_platform_browser_dynamic__ = __webpack_require__(105);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__app_app_module__ = __webpack_require__(113);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__environments_environment__ = __webpack_require__(39);
 
 
 
