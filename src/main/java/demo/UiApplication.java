@@ -24,7 +24,6 @@ import java.util.UUID;
 
 @SpringBootApplication
 @RestController
-@EnableRedisHttpSession
 public class UiApplication {
 
 //    @RequestMapping("/resource")
