@@ -24,6 +24,7 @@ import java.util.UUID;
 
 @SpringBootApplication
 @RestController
+@EnableRedisHttpSession
 public class UiApplication {
 
 //    @RequestMapping("/resource")
@@ -53,7 +54,7 @@ public class UiApplication {
                     .httpBasic()
                     .and()
                     .authorizeRequests()
-                    .antMatchers("/*.js*", "/").permitAll()
+                    .antMatchers("/*.js", "/").permitAll()
               //      .antMatchers("/index.html", "/*.js", "/").permitAll()
 //                    .antMatchers("/index.html", "/home.html", "/login.html", "/", "/*.js*", "/**/app-home*", "/**/app-login*", "/**/*").permitAll()
                     .anyRequest().authenticated().and()
