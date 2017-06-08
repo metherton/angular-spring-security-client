@@ -12,7 +12,7 @@ export class AppHomeService {
     let myHeaders = new Headers();
     myHeaders.append('X-Requested-With', 'XMLHttpRequest');
     let options = new RequestOptions({headers: myHeaders});
-    return this.http.get(environment.apiUrl + `token`, options).toPromise().then(response => response.json());
+    return this.http.get(`token`, options).toPromise().then(response => response.json());
   }
 
   getGreeting(token: any): Promise<any> {

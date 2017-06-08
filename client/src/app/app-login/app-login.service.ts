@@ -12,7 +12,7 @@ export class AppLoginService {
   constructor(private http: Http) { }
 
   getUser(headers: any): Promise<any> {
-    return this.http.get(environment.apiUrl + `user`, headers).toPromise().then(response => response.json());
+    return this.http.get(`user`, headers).toPromise().then(response => response.json());
   }
 
 }
