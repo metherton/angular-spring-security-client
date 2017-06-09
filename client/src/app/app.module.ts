@@ -11,6 +11,7 @@ import { AppNavigationComponent } from './app-navigation/app-navigation.componen
 import {BrowserAnimationsModule} from '@angular/platform-browser/animations';
 import {MdButtonModule, MdCheckboxModule, MdToolbarModule, MdAutocompleteModule, MdInputModule, MdCardModule, MdGridListModule} from '@angular/material';
 import 'hammerjs';
+import {CredentialsService} from './credentials.service';
 
 export class MyOptions extends BaseRequestOptions {
   headers:Headers=new Headers({
@@ -37,6 +38,7 @@ export class MyOptions extends BaseRequestOptions {
     MdButtonModule, MdCheckboxModule, MdToolbarModule, MdAutocompleteModule, MdInputModule, MdCardModule, MdGridListModule
   ],
 
-  bootstrap: [AppComponent]
+  bootstrap: [AppComponent],
+  providers: [CredentialsService]
 })
 export class AppModule { }

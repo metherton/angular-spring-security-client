@@ -8,7 +8,7 @@
       <button md-button routerLink="app-algorithm">Algorithms</button>
       <button md-button routerLink="app-ons">ONS</button>
       <button md-button routerLink="app-routeapp">Router</button>
-      <button md-button routerLink="app-blog">Blog</button>
+      <button *ngIf="credentialsService.isAuthenticated()" md-button routerLink="app-blog">Blog</button>
 
     </div>
   </span>

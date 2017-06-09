@@ -16,9 +16,9 @@ export class AppHomeComponent implements OnInit {
 
   ngOnInit() {
   //  this.appHomeService.getToken()
-//    this.greeting = this.appHomeService.getToken().then(token => this.appHomeService.getGreeting(token)).then( gr => this.greeting = gr, () =>  this.router.navigate(['/app-login']));
+   this.greeting = this.appHomeService.getToken().then(token => this.appHomeService.getGreeting(token)).then( gr => this.greeting = gr, () =>  this.router.navigate(['/app-login']));
 
-    this.greeting = this.appHomeService.getToken().then(token => this.appHomeService.getGreeting(token)).then( gr => this.greeting = gr);
+//    this.greeting = this.appHomeService.getToken().then(token => this.appHomeService.getGreeting(token)).then( gr => this.greeting = gr);
   }
 
 }

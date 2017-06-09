@@ -4,8 +4,9 @@
       <input mdInput [(ngModel)]="credentials.username" name="username" placeholder="Username" #username="ngModel" >
     </md-input-container>
     <md-input-container class="example-full-width">
-      <input mdInput [(ngModel)]="credentials.password"  name="password" placeholder="Password" #password="ngModel" >
+      <input mdInput [(ngModel)]="credentials.password" type="password" name="password" placeholder="Password" #password="ngModel" >
     </md-input-container>
+    <md-error *ngIf="error">Invalid username or password. Please try again</md-error>
     <button style="margin-top: 20px" type="submit" md-raised-button>Login</button>
   </p>
 </form>

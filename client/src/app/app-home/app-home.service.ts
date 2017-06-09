@@ -2,11 +2,12 @@ import { Injectable } from '@angular/core';
 import {Http, Response, RequestOptions, Headers} from '@angular/http'
 import 'rxjs/add/operator/toPromise';
 import {environment} from '../../environments/environment';
+import {CredentialsService} from '../credentials.service';
 
 @Injectable()
 export class AppHomeService {
 
-  constructor(private http: Http) { }
+  constructor(private http: Http, private credentialsService: CredentialsService) { }
 
   getToken(): Promise<any> {
     let myHeaders = new Headers();
@@ -17,11 +18,15 @@ export class AppHomeService {
 
   getGreeting(token: any): Promise<any> {
     let myHeaders = new Headers();
+    if (this.credentialsService.getPassword() && this.credentialsService.getUsername()) {
+      let auth =  'Basic ' + btoa(this.credentialsService.getUsername() + ':' + this.credentialsService.getPassword());
+      myHeaders.append('Authorization', auth)
+    }
     myHeaders.append('X-Auth-Token', token.token);
     myHeaders.append('X-Requested-With', 'XMLHttpRequest');
     let options = new RequestOptions({headers: myHeaders});
    // return this.http.get(`http://localhost:9000`, options).toPromise().then(response => response.json());
-    return this.http.get(environment.resourceUrl, options).toPromise().then(response => response.json());
+    return this.http.get(environment.resourceUrl + 'resource', options).toPromise().then(response => response.json());
   }
 
 //   let myHeaders = new Headers();
