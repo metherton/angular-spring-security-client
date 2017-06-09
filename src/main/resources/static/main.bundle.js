@@ -249,10 +249,14 @@ var __decorate = (this && this.__decorate) || function (decorators, target, key,
     else for (var i = decorators.length - 1; i >= 0; i--) if (d = decorators[i]) r = (c < 3 ? d(r) : c > 3 ? d(target, key, r) : d(target, key)) || r;
     return c > 3 && r && Object.defineProperty(target, key, r), r;
 };
+var __metadata = (this && this.__metadata) || function (k, v) {
+    if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
+};
 
 
 var AppComponent = (function () {
-    function AppComponent() {
+    function AppComponent(credentialsService) {
+        this.credentialsService = credentialsService;
         this.title = 'app works!';
     }
     AppComponent.prototype.ngOnInit = function () {
@@ -265,9 +269,11 @@ AppComponent = __decorate([
         template: __webpack_require__(178),
         styles: [__webpack_require__(172)],
         providers: [__WEBPACK_IMPORTED_MODULE_1__credentials_service__["a" /* CredentialsService */]]
-    })
+    }),
+    __metadata("design:paramtypes", [typeof (_a = typeof __WEBPACK_IMPORTED_MODULE_1__credentials_service__["a" /* CredentialsService */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_1__credentials_service__["a" /* CredentialsService */]) === "function" && _a || Object])
 ], AppComponent);
 
+var _a;
 //# sourceMappingURL=app.component.js.map
 
 /***/ }),
@@ -468,7 +474,7 @@ module.exports = "\n\n"
 /***/ 175:
 /***/ (function(module, exports) {
 
-module.exports = "<form (ngSubmit)=\"login()\" #loginForm=\"ngForm\" class=\"example-form\">\n  <p style=\"padding-left: 50px; padding-top: 20px\">\n    <md-input-container class=\"example-full-width\">\n      <input mdInput [(ngModel)]=\"credentials.username\" name=\"username\" placeholder=\"Username\" #username=\"ngModel\" >\n    </md-input-container>\n    <md-input-container class=\"example-full-width\">\n      <input mdInput [(ngModel)]=\"credentials.password\"  name=\"password\" placeholder=\"Password\" #password=\"ngModel\" >\n    </md-input-container>\n    <button style=\"margin-top: 20px\" type=\"submit\" md-raised-button>Login</button>\n  </p>\n</form>\n"
+module.exports = "<form (ngSubmit)=\"login()\" #loginForm=\"ngForm\" class=\"example-form\">\n  <p style=\"padding-left: 50px; padding-top: 20px\">\n    <md-input-container class=\"example-full-width\">\n      <input mdInput [(ngModel)]=\"credentials.username\" name=\"username\" placeholder=\"Username\" #username=\"ngModel\" >\n    </md-input-container>\n    <md-input-container class=\"example-full-width\">\n      <input mdInput [(ngModel)]=\"credentials.password\" type=\"password\" name=\"password\" placeholder=\"Password\" #password=\"ngModel\" >\n    </md-input-container>\n    <md-error *ngIf=\"error\">Invalid username or password. Please try again</md-error>\n    <button style=\"margin-top: 20px\" type=\"submit\" md-raised-button>Login</button>\n  </p>\n</form>\n"
 
 /***/ }),
 
@@ -489,7 +495,7 @@ module.exports = "<p>\n  app-navigation works!\n</p>\n"
 /***/ 178:
 /***/ (function(module, exports) {
 
-module.exports = "<md-toolbar color=\"primary\">\n  <span style=\"padding-right: 100px\">MartinEtherton.com</span>\n  <!-- This fills the remaining space of the current row -->\n  <span class=\"example-fill-remaining-space\">\n    <div class=\"button-row\">\n      <button md-button routerLink=\"app-login\">Login</button>\n      <button md-button routerLink=\"app-home\">Home</button>\n      <button md-button routerLink=\"app-algorithm\">Algorithms</button>\n      <button md-button routerLink=\"app-ons\">ONS</button>\n      <button md-button routerLink=\"app-routeapp\">Router</button>\n      <button md-button routerLink=\"app-blog\">Blog</button>\n\n    </div>\n  </span>\n\n  <span>\n    <md-input-container>\n      <input mdInput placeholder=\"Search\" [mdAutocomplete]=\"auto\">\n    </md-input-container>\n    <md-autocomplete #auto=\"mdAutocomplete\">\n      <md-option *ngFor=\"let state of filteredStates | async\" [value]=\"Search\">\n        {{ state }}\n      </md-option>\n    </md-autocomplete>\n  </span>\n</md-toolbar>\n<router-outlet></router-outlet>\n"
+module.exports = "<md-toolbar color=\"primary\">\n  <span style=\"padding-right: 100px\">MartinEtherton.com</span>\n  <!-- This fills the remaining space of the current row -->\n  <span class=\"example-fill-remaining-space\">\n    <div class=\"button-row\">\n      <button md-button routerLink=\"app-login\">Login</button>\n      <button md-button routerLink=\"app-home\">Home</button>\n      <button md-button routerLink=\"app-algorithm\">Algorithms</button>\n      <button md-button routerLink=\"app-ons\">ONS</button>\n      <button md-button routerLink=\"app-routeapp\">Router</button>\n      <button *ngIf=\"credentialsService.isAuthenticated()\" md-button routerLink=\"app-blog\">Blog</button>\n\n    </div>\n  </span>\n\n  <span>\n    <md-input-container>\n      <input mdInput placeholder=\"Search\" [mdAutocomplete]=\"auto\">\n    </md-input-container>\n    <md-autocomplete #auto=\"mdAutocomplete\">\n      <md-option *ngFor=\"let state of filteredStates | async\" [value]=\"Search\">\n        {{ state }}\n      </md-option>\n    </md-autocomplete>\n  </span>\n</md-toolbar>\n<router-outlet></router-outlet>\n"
 
 /***/ }),
 
@@ -539,6 +545,12 @@ var CredentialsService = (function () {
     CredentialsService.prototype.getPassword = function () {
         return this.password;
     };
+    CredentialsService.prototype.setAuthenticated = function (value) {
+        this.authenticated = value;
+    };
+    CredentialsService.prototype.isAuthenticated = function () {
+        return this.authenticated;
+    };
     return CredentialsService;
 }());
 CredentialsService = __decorate([
@@ -576,10 +588,10 @@ var AppHomeComponent = (function () {
         this.router = router;
     }
     AppHomeComponent.prototype.ngOnInit = function () {
-        //  this.appHomeService.getToken()
-        //    this.greeting = this.appHomeService.getToken().then(token => this.appHomeService.getGreeting(token)).then( gr => this.greeting = gr, () =>  this.router.navigate(['/app-login']));
         var _this = this;
-        this.greeting = this.appHomeService.getToken().then(function (token) { return _this.appHomeService.getGreeting(token); }).then(function (gr) { return _this.greeting = gr; });
+        //  this.appHomeService.getToken()
+        this.greeting = this.appHomeService.getToken().then(function (token) { return _this.appHomeService.getGreeting(token); }).then(function (gr) { return _this.greeting = gr; }, function () { return _this.router.navigate(['/app-login']); });
+        //    this.greeting = this.appHomeService.getToken().then(token => this.appHomeService.getGreeting(token)).then( gr => this.greeting = gr);
     };
     return AppHomeComponent;
 }());
@@ -634,10 +646,14 @@ var AppLoginComponent = (function () {
     }
     AppLoginComponent.prototype.ngOnInit = function () {
         this.credentials = {};
+        this.credentialsService.setPassword(undefined);
+        this.credentialsService.setUsername(undefined);
+        this.credentialsService.setAuthenticated(false);
         //   this.authenticate(undefined, undefined);
     };
     AppLoginComponent.prototype.authenticate = function (credentials, callback) {
         var _this = this;
+        this.error = false;
         var myHeaders = new __WEBPACK_IMPORTED_MODULE_4__angular_http__["a" /* Headers */]();
         myHeaders.append('X-Requested-With', 'XMLHttpRequest');
         this.credentialsService.setUsername(credentials.username);
@@ -648,19 +664,16 @@ var AppLoginComponent = (function () {
         }
         var options = new __WEBPACK_IMPORTED_MODULE_4__angular_http__["e" /* RequestOptions */]({ headers: myHeaders });
         this.appLoginService.getUser(options).then(function (user) {
-            if (user.name) {
-                _this.isAuthenticated = true;
-            }
-            else {
-                _this.isAuthenticated = false;
-            }
+            _this.credentialsService.setAuthenticated(true);
             callback && callback();
+        }, function () {
+            _this.error = true;
         });
     };
     AppLoginComponent.prototype.login = function () {
         var self = this;
         this.authenticate(this.credentials, function () {
-            if (self.isAuthenticated) {
+            if (self.credentialsService.isAuthenticated) {
                 var navigationExtras = {
                     preserveQueryParams: true,
                     preserveFragment: true
