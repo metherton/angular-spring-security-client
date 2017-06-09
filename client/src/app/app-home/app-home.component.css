@@ -1,8 +1,9 @@
 .example-card {
-  width: 1356px;
+  width: 400px;
+  margin-top: 20px;
 }
 
 .example-header-image {
-  background-image: url('../../assets/somethingcool.png');
+  background-image: url('../../assets/martin.jpg');
   background-size: cover;
 }
