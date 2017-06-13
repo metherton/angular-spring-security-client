@@ -12,6 +12,7 @@ import {BrowserAnimationsModule} from '@angular/platform-browser/animations';
 import {MdButtonModule, MdCheckboxModule, MdToolbarModule, MdAutocompleteModule, MdInputModule, MdCardModule, MdGridListModule} from '@angular/material';
 import 'hammerjs';
 import {CredentialsService} from './credentials.service';
+import { AppOnsComponent } from './app-ons/app-ons.component';
 
 export class MyOptions extends BaseRequestOptions {
   headers:Headers=new Headers({
@@ -27,7 +28,8 @@ export class MyOptions extends BaseRequestOptions {
     AppHomeComponent,
     AppLoginComponent,
     AppLogoutComponent,
-    AppNavigationComponent
+    AppNavigationComponent,
+    AppOnsComponent
   ],
   imports: [
     BrowserModule,

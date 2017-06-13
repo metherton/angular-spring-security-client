@@ -14,10 +14,8 @@ import { Router,
 })
 export class AppLoginComponent implements OnInit {
 
-  private isAuthenticated: boolean;
   private credentials: any;
   private error: boolean;
- // private location: Location;
 
   constructor(private appLoginService: AppLoginService, private router: Router, private credentialsService: CredentialsService) {
     this.router = router;
@@ -28,8 +26,6 @@ export class AppLoginComponent implements OnInit {
     this.credentialsService.setPassword(undefined);
     this.credentialsService.setUsername(undefined);
     this.credentialsService.setAuthenticated(false);
-
- //   this.authenticate(undefined, undefined);
   }
 
   authenticate(credentials, callback): void {
@@ -51,7 +47,7 @@ export class AppLoginComponent implements OnInit {
     }, () =>  {
       this.error = true
     });
-   
+
   }
 
   login(): void {
@@ -66,19 +62,5 @@ export class AppLoginComponent implements OnInit {
       }
     });
   }
-
- // $scope.login = function() {
-//   authenticate($scope.credentials, function() {
-//     if ($rootScope.authenticated) {
-//       $location.path("/");
-//       $scope.error = false;
-//     } else {
-//       $location.path("/login");
-//       $scope.error = true;
-//     }
-//   });
-// };
-
-
-
+  
 }

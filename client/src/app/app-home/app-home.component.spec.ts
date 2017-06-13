@@ -1,5 +1,5 @@
+import { CUSTOM_ELEMENTS_SCHEMA } from '@angular/core';
 import { async, ComponentFixture, TestBed } from '@angular/core/testing';
-
 import { AppHomeComponent } from './app-home.component';
 
 describe('AppHomeComponent', () => {
@@ -8,7 +8,8 @@ describe('AppHomeComponent', () => {
 
   beforeEach(async(() => {
     TestBed.configureTestingModule({
-      declarations: [ AppHomeComponent ]
+      declarations: [ AppHomeComponent ],
+      schemas: [CUSTOM_ELEMENTS_SCHEMA]
     })
     .compileComponents();
   }));

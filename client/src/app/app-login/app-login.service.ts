@@ -3,9 +3,6 @@ import {Http, Response, RequestOptions, Headers} from '@angular/http';
 import 'rxjs/add/operator/toPromise';
 import {environment} from '../../environments/environment';
 
-
-
-
 @Injectable()
 export class AppLoginService {
 
